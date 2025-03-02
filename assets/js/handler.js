@@ -5,39 +5,47 @@ function initGivePage() {
 }
 
 function setPageContent(data) {
-  data.forEach(function(item) {
-    let imageIcon = "https://aqr.aplx.link/assets/img/logo-aqr1.png";
-    
+
+  data.forEach(function(item) {    
+    let token = item["extra_bitly_fromqr"].split("/")[4];
+    let targetList = item["is_give"] == "Y" ? "#giving-list" : "#support-list";
+    let buttonText = item["is_give"] == "Y" ? "기부하기" : "후원하기";
+    let descText = AAPI_isSet(item["content"]) ? item["content"] : "";
+
+    let imageIcon = "./assets/img/logo-red.png";
     if (item["icon_image_path"] != "") imageIcon = item["icon_image_path"];
 
-    let token = item["extra_bitly_fromqr"].split("/")[4];
-    $("#giving-list").append(
-            `<li class="list-unstyled pt-4">
-              <div class="media align-items-center">
+    $(targetList).append(
+            `<li class="list-unstyled pt-4">              
+              <div class="media align-items-center">                
                 <img class="avatar user-rounded" src="` + imageIcon + `" alt="">
                 <div class="media-body ml-2">
                   <span class="d-block mb-0 text-black">` + item["extra_com_name"] + `</span>
+                  <span class="d-block mb-0 text-gray"><small>`+ descText +`</small></span>
                 </div>
-                <div class="media-body ml-2">
-                  <button class="btn btn-sm btn-outline-green" id="curButtonIndex_`+curButtonIndex+`" aqr-data-token="` + token + `">기부하기</button>
+                <div class="media-body ml-2 text-right align-items-end">
+                  <button class="btn btn-sm btn-outline-green" id="curButtonIndex_`+curButtonIndex+`" aqr-data-token="` + token + `">` + buttonText + `</button>
                 </div>
               </div>
+              <hr size="1" color="#11897D">
             </li>`
     );
 
-    $("#curButtonIndex_" + curButtonIndex).click(function() {
+    $("#curButtonIndex_" + curButtonIndex).click(function() {      
       let token = $(this).attr('aqr-data-token');
       $("#aqr-widget-area").empty();
   
+      AAPI_GA_EVENT("give_button_click", curButtonIndex, token);
+
       new AQRWidget().renderAQRWidget(
       {
-          token : token, // uniq token
+          token : token,
           layer_id : "aqr-widget-area", // target layer id
           profile : true, // Show or Not profile image and account name
           libbutton : true, // Show or Not SNS Link Buttons
           bgcolor : "#ffffff", // hex only
-          textcolor : "#333333", // hex only
-          button_text : "기부하기",
+          textcolor : "#555555", // hex only
+          button_text : buttonText,
           open : false
         }
       );
@@ -74,6 +82,17 @@ function AAPI_isSet(value) {
 
 	return true;
 }
+
+const AAPI_GA_EVENT = (event_name, event_target_name, event_label) => {
+	if (typeof gtag !== 'undefined') {
+		gtag(
+			'event', event_name, {
+			'event_category': event_target_name,
+			'event_label': event_label
+		}
+		);
+	}
+};
 
 function AAPI_ajaxRequest(fed, success_callback, error_callback) {
 	$.ajax({
