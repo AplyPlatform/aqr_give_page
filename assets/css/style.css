@@ -8517,7 +8517,7 @@ a.text-twitter:hover, a.text-twitter:focus {
   color: #0074a1 !important; }
 
 .text-linkedin {
-  color: #007bb6 !important; }
+  color: #11897d !important; }
 
 a.text-linkedin:hover, a.text-linkedin:focus {
   color: #00476a !important; }
@@ -17773,8 +17773,8 @@ footer {
 
 .avatar {
   border-radius: 0.25rem;
-  width: 3.75rem;
-  height: 3.75rem; }
+  width: 3.25rem;
+  height: 3.25rem; }
   .avatar[class*="-sm"] {
     width: 2.5rem;
     height: auto; }
@@ -18097,7 +18097,7 @@ footer {
   .feed li:not(:last-child) {
     margin-bottom: 15px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #e5e5e5; }
+    border-bottom: 1px solid #d5d5d5; }
 
 .feed-item {
   -webkit-transition: all 0.2s;
