@@ -75,8 +75,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-              </div>
-              <div class="top-shadow"></div>              
+              </div>          
             </div>
             <div class="caption">
               <div class="container">
@@ -86,12 +85,10 @@
                     <h2 class="display-2">기부 및 후원 활동은 AQR과 함께</h1>
                   </div>
                   <div class="col-12 text-center">
-                    <a href="https://aplx.link/register" target="_blank" type="button" class="btn btn-sm btn-red">신청하기</a>
+                    <a type="button" class="btn btn-sm btn-red" href="https://aplx.link/square" target="_blank">신청하기</a>
                   </div>
-                </div>
-                
-              </div>
-                
+                </div>                
+              </div>                
             </div>
           </div>
         </div>
@@ -131,31 +128,31 @@
             
             <div class="tab-content">
               <div class="tab-pane" id="list-0" role="tabpanel" aria-labelledby="list-0">
-                <ul id="list_0">
+                <ul id="list_0" class="feed">
                 </ul>
               </div>
               <div class="tab-pane" id="list-1" role="tabpanel" aria-labelledby="list-1">
-                <ul id="list_1">
+                <ul id="list_1" class="feed">
                 </ul>
               </div>
               <div class="tab-pane" id="list-2" role="tabpanel" aria-labelledby="list-2">
-                <ul id="list_2">
+                <ul id="list_2" class="feed">
                 </ul>
               </div>
               <div class="tab-pane" id="list-3" role="tabpanel" aria-labelledby="list-3">
-                <ul id="list_3">
+                <ul id="list_3" class="feed">
                 </ul>
               </div>
               <div class="tab-pane show active" id="list-4" role="tabpanel" aria-labelledby="list-4">
-                <ul id="list_4">
+                <ul id="list_4" class="feed">
                 </ul>
               </div>
               <div class="tab-pane" id="list-5" role="tabpanel" aria-labelledby="list-5">
-                <ul id="list_5">
+                <ul id="list_5" class="feed">
                 </ul>
               </div>
               <div class="tab-pane" id="list-6" role="tabpanel" aria-labelledby="list-6">
-                <ul id="list_6">
+                <ul id="list_6" class="feed">
                 </ul>
               </div>
             </div>
@@ -164,7 +161,7 @@
 
       </div>
     </section>
-
+   
     <!-- footer -->
     <footer class="bg-light">
       <div class="container py-5">
@@ -172,20 +169,24 @@
           <div class="col-md-5 text-center text-md-left">
             <ul class="nav">
               <li class="nav-item">
-                <a class="nav-link" href="https://aqr.aplx.link/#email-up" target="_blank">Contacts</a>
+                <a class="nav-link" href="https://aqr.aplx.link/" target="_blank">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://aqr.aplx.link" target="_blank">About Us</a>
+                <a class="nav-link" href="https://aqr.aplx.link/#email-up" target="_blank">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://aplx.link/square/" target="_blank">Join</a>
               </li>
             </ul>
           </div>
           <div class="col-md-2 text-center">
-            <a href="https://aq.gy" target="_blank"><img class="logo-sm" src="assets/img/logo-red.png" alt="AQR"></a>
+            <img class="logo-sm" src="assets/img/logo-red.png" alt="AQR">
           </div>
           <div class="col-md-5 text-center text-md-right">
             <ul class="socials">
-              <li><a href="https://facebook.com/APLYPLATFORM" target="_blank" class="icon-facebook text-facebook fs-20"></a></li>
-              <li><a href="https://instagram.com/aqrservice" target="_blank" class="icon-instagram text-instagram fs-20"></a></li>
+              <li><a class="icon-instagram text-instagram fs-20" href="https://www.instagram.com/aplyplatform" target="_blank"></a></li>
+              <li><a class="icon-facebook text-facebook fs-20" href="https://www.facebook.com/APLYPLATFORM" target="_blank"></a></li>
+              <li><a class="icon-linkedin text-linkedin fs-20" href="https://kr.linkedin.com/company/aplyplatform" target="_blank"></a></li>
             </ul>
           </div>
         </div>
@@ -197,17 +198,17 @@
     <div class="modal fade" id="aqrDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="margin-left: 0px !important; margin-right: 0px !important; padding: 0px !important;">          
+        <div class="modal-content" style="margin-left: 0px !important; margin-right: 0px !important; padding: 0px !important;">        
           <div class="modal-body" style="margin-left: 0px !important; margin-right: 0px !important; padding: 0px !important;">
             <p align="right">
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">              
-                <span aria-hidden="true">×</span>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="icon-x"></span>
               </button>
             </p>
             <li class="list-unstyled pt-4" id="aqr-widget-area"></li>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-success" type="button" data-dismiss="modal">닫기</button>
+            <button class="btn btn-sm btn-success" type="button" data-dismiss="modal">닫기</button>
           </div>
         </div>
       </div>

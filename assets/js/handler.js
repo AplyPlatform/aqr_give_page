@@ -15,18 +15,21 @@ function setPageContent(data) {
     if (item["icon_image_path"] != "") imageIcon = item["icon_image_path"];
 
     $(targetList).append(
-            `<li class="list-unstyled pt-4">              
+            `<li>              
               <div class="media align-items-center">                
                 <img class="avatar user-rounded" src="` + imageIcon + `" alt="">
                 <div class="media-body ml-2">
-                  <span class="d-block mb-0 text-black">` + item["extra_com_name"] + `</span>
-                  <span class="d-block mb-0 text-gray"><small>`+ descText +`</small></span>
-                </div>
-                <div class="media-body ml-2 text-right align-items-end">
-                  <button class="btn btn-sm btn-outline-green" id="curButtonIndex_`+curButtonIndex+`" aqr-data-token="` + token + `">후원하기</button>
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <span class="d-block mb-0 text-black">` + item["extra_com_name"] + `</span>
+                      <span class="d-block mb-0 text-gray"><small>`+ descText +`</small></span>
+                    </div>
+                    <div class="col-sm-4 mt-1 text-right text-sm-right align-middle">
+                      <button class="btn btn-sm btn-outline-green" id="curButtonIndex_`+curButtonIndex+`" aqr-data-token="` + token + `">후원하기</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <hr size="1" color="#11897D">
             </li>`
     );
 
