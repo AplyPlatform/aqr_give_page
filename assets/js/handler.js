@@ -47,7 +47,7 @@ function setPageContent(data) {
           libbutton : true, // Show or Not SNS Link Buttons
           bgcolor : "#ffffff", // hex only
           textcolor : "#555555", // hex only
-          button_text : buttonText,
+          button_text : "후원하기",
           open : false
         }
       );
