@@ -8,8 +8,7 @@ function setPageContent(data) {
 
   data.forEach(function(item) {    
     let token = item["extra_bitly_fromqr"].split("/")[4];
-    let targetList = item["is_give"] == "Y" ? "#giving-list" : "#support-list";
-    let buttonText = item["is_give"] == "Y" ? "기부하기" : "후원하기";
+    let targetList = "#list_" + item["kind_no"];
     let descText = AAPI_isSet(item["content"]) ? item["content"] : "";
 
     let imageIcon = "./assets/img/logo-red.png";
@@ -24,7 +23,7 @@ function setPageContent(data) {
                   <span class="d-block mb-0 text-gray"><small>`+ descText +`</small></span>
                 </div>
                 <div class="media-body ml-2 text-right align-items-end">
-                  <button class="btn btn-sm btn-outline-green" id="curButtonIndex_`+curButtonIndex+`" aqr-data-token="` + token + `">` + buttonText + `</button>
+                  <button class="btn btn-sm btn-outline-green" id="curButtonIndex_`+curButtonIndex+`" aqr-data-token="` + token + `">후원하기</button>
                 </div>
               </div>
               <hr size="1" color="#11897D">
