@@ -1,7 +1,14 @@
 let curPage = 0;
 let curButtonIndex = 0;
 function initGivePage() {  
-  getPageData();  
+  getPageData();
+
+  AAPI_setContactForm("give_page");
+
+  $("#joinButton").click(function() {
+    AAPI_GA_EVENT("join_button_click", "join_button", "click");
+    $("#registerDialog").modal('show');
+  });
 }
 
 function setPageContent(data) {
@@ -63,7 +70,7 @@ function getPageData() {
   let fd = new FormData();	
 	fd.append("action", "data");
   fd.append("page", curPage);
-  AAPI_ajaxRequest(fd, function(data) {    
+  dataRequest(fd, function(data) {    
     if(data.result == "success") {
       curPage += 1;
       setPageContent(data.data);
@@ -78,25 +85,7 @@ function getPageData() {
 
 }
 
-
-function AAPI_isSet(value) {
-	if (value == "" || value == null || value == "undefined" || value == undefined) return false;
-
-	return true;
-}
-
-const AAPI_GA_EVENT = (event_name, event_target_name, event_label) => {
-	if (typeof gtag !== 'undefined') {
-		gtag(
-			'event', event_name, {
-			'event_category': event_target_name,
-			'event_label': event_label
-		}
-		);
-	}
-};
-
-function AAPI_ajaxRequest(fed, success_callback, error_callback) {
+function dataRequest(fed, success_callback, error_callback) {
 	$.ajax({
 		type: "POST",
 		url: 'https://aq.gy/api/content/give.php',

@@ -49,9 +49,14 @@
       @keyframes top-shadow {
         50% {transform: translateX(-50%) scale(0.5); border-color: #f2f2f2;}
       }
+
+      input, progress {
+        accent-color: #11897d;
+      }
     </style>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
   </head>
-  <body>
+  <body>    
     <!-- header -->
     <header>
       <div class="container">
@@ -169,13 +174,13 @@
           <div class="col-md-5 text-center text-md-left">
             <ul class="nav">
               <li class="nav-item">
-                <a class="nav-link" href="https://aqr.aplx.link/" target="_blank">About</a>
+                <a class="nav-link" href="https://aqr.aplx.link/" target="_blank">AQR 소개</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://aqr.aplx.link/#email-up" target="_blank">Contact</a>
+                <a class="nav-link" href="https://aqr.aplx.link/#email-up" target="_blank">서비스 문의</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://aplx.link/square/" target="_blank">Join</a>
+                <a class="nav-link" href="#" id="joinButton">등록신청</a>
               </li>
             </ul>
           </div>
@@ -192,9 +197,142 @@
         </div>
       </div>
     </footer>
-    <!-- / footer -->
+    <!-- / footer -->    
 
-      <!-- Modal 3 -->
+    <!-- Modal 3 -->
+    <div class="modal fade" id="registerDialog" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-end">
+            <button type="button" class="close bg-light" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" class="icon-x"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row justify-content-center mb-1 text-left">
+              <div class="col-sm-12 mb-1">
+                <h5 class="text-center mb-2"><B>단체(기업) 등록 신청</B></h5>
+                <br>
+                <span class="mb-1">단체(기업) 특성을 가장 잘 나타내는 항목 1~2개를 선택해주세요.</span>
+                <br>
+                <input type="checkbox" name="form_contact_min_type_1" id="mi_1" value="청소년">
+                <label class="lab_check" for="mi_1"><span class="checkbox"
+                    style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">청소년</span></label>
+                
+                &nbsp;&nbsp;
+                
+                <input type="checkbox" name="form_contact_min_type_2" id="mi_2" value="환경">
+                <label class="lab_check" for="mi_2"><span class="checkbox"
+                    style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">환경</span></label>                
+                
+                &nbsp;&nbsp;
+
+                <input type="checkbox" name="form_contact_min_type_3" id="mi_3" value="아동">
+                <label class="lab_check" for="mi_3"><span class="checkbox"
+                    style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">아동</span></label>
+                
+                &nbsp;&nbsp;
+
+                <input type="checkbox" name="form_contact_min_type_4" id="mi_4" value="사회적 약자">
+                <label class="lab_check" for="mi_4"><span class="checkbox"
+                    style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">사회적 약자</span></label>
+                
+                &nbsp;&nbsp;
+
+                <input type="checkbox" name="form_contact_min_type_5" id="mi_5" value="문화">
+                <label class="lab_check" for="mi_5"><span class="checkbox"
+                    style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">문화</span></label>
+                
+                &nbsp;&nbsp;
+                
+                <input type="checkbox" name="form_contact_min_type_6" id="mi_6" value="동물">
+                <label class="lab_check" for="mi_6"><span class="checkbox"
+                    style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">동물</span></label>
+                
+                &nbsp;&nbsp;
+                
+                <input type="checkbox" name="form_contact_min_type_7" id="mi_7" value="기타">
+                <label class="lab_check" for="mi_7"><span class="checkbox"
+                    style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">기타</span></label>
+              </div>
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="row justify-content-center mb-4">
+              <div class="col-12">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="form_contact_name" placeholder="단체(기업)명" required="">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="form_contact_url" placeholder="AQR 고유 주소" required="">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="form_contact_biznumber" placeholder="사업자 번호 또는 고유 번호" required="">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="form_contact_phone" placeholder="전화번호(-없이 입력해주세요)"
+                    required="" pattern="\d+">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="form_contact_email" placeholder="이메일 주소" required="">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group">
+                  <textarea class="form-control" name="form_contact_content" rows="2" placeholder="단체 소개 (1~2줄 이내 간략히, 100자 이내)" required=""></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+              <div class="col-12 text-center">
+                <div class="form-group">
+                  <input type="checkbox" name="form_contact_agree_1" id="form_contact_agree_1" value="제공">
+                  <label class="lab_check" for="form_contact_agree_1"><span class="checkbox"></span></label>
+                  <a style="cursor:pointer;" id="form_contact_privacy_link">개인정보 처리방침</a> 동의 <span
+                    class="required">(필수)</span>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center mb-1">
+              <div class="col-md-6 text-center justify-content-center">
+                <button class="btn btn-success btn-block" id="form_contact_send">보내기</button>
+                <span id="form_contact_send_loading" style="display:none;">
+                  <span class="spinner-border spinner-border-sm"></span> 전송 중...
+                </span>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div id="turnstileWidget"></div>
+              <div class="col-12 fs-14 text-center">
+                이 사이트는 Turnstile의 보호를 받으며 Cloudflare <a href='https://www.cloudflare.com/ko-kr/privacypolicy/'
+                  style='color:#333;' target='_blank'>개인 정보 보호 정책</a> 및 <a
+                  href='https://www.cloudflare.com/ko-kr/website-terms/' style='color:#333;' target='_blank'>서비스
+                  약관</a>이 적용됩니다.
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-success" type="button" data-dismiss="modal">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
     <div class="modal fade" id="aqrDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
@@ -212,10 +350,58 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
+
+    <div class="modal fade" id="contactPrivacyDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-end">
+            <button type="button" class="close bg-light" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" class="icon-x"></span>
+            </button>
+          </div>
+          <div class="modal-body border-top" id="contact_privacy_body_content"></div>
+          <div class="modal-footer border-top">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-5">
+                  <button class="btn btn-dark btn-block" type="button" data-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="AAPI_askModal" tabindex="-1" role="dialog" aria-labelledby="askModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-end">
+            <button type="button" class="close bg-light" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" class="icon-x"></span>
+            </button>
+          </div>          
+          <div class="modal-body border-top text-center">            
+            <span id="AAPI_askModalContent"></span>
+          </div>       
+          <div class="modal-footer border-top">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-5">
+                  <button class="btn btn-primary btn-block" type="button" data-dismiss="modal" id="AAPI_askModalOKButton">확인</button>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
     
     <script src="assets/js/vendor.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="https://home.aply.biz/assets/js/aplyServices.js?v=20250131_02"></script>
     <script type="text/javascript" src="assets/js/handler.js"></script>
     <script src="https://aq.gy/c/widget.js"></script>
   </body>
