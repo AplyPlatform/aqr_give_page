@@ -5,7 +5,7 @@ function initGivePage() {
 
   AAPI_setContactForm("give_page");
 
-  $("#joinButton").click(function() {
+  $(".joinButton").click(function() {
     AAPI_GA_EVENT("join_button_click", "join_button", "click");
     $("#registerDialog").modal('show');
   });
