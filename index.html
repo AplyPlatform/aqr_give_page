@@ -202,7 +202,7 @@
 
     <!-- Modal 3 -->
     <div class="modal fade" id="registerDialog" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
+      aria-hidden="true" style="overflow-y: auto;">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header justify-content-end">
@@ -219,7 +219,7 @@
                 <br>
                 <input type="checkbox" name="form_contact_min_type_1" id="mi_1" value="청소년">
                 <label class="lab_check" for="mi_1"><span class="checkbox"
-                    style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">청소년</span></label>
+                    style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">아동·청소년</span></label>
                 
                 &nbsp;&nbsp;
                 
@@ -229,32 +229,26 @@
                 
                 &nbsp;&nbsp;
 
-                <input type="checkbox" name="form_contact_min_type_3" id="mi_3" value="아동">
+                <input type="checkbox" name="form_contact_min_type_3" id="mi_3" value="사회적 약자">
                 <label class="lab_check" for="mi_3"><span class="checkbox"
-                    style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">아동</span></label>
-                
-                &nbsp;&nbsp;
-
-                <input type="checkbox" name="form_contact_min_type_4" id="mi_4" value="사회적 약자">
-                <label class="lab_check" for="mi_4"><span class="checkbox"
                     style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">사회적 약자</span></label>
                 
                 &nbsp;&nbsp;
 
-                <input type="checkbox" name="form_contact_min_type_5" id="mi_5" value="문화">
-                <label class="lab_check" for="mi_5"><span class="checkbox"
+                <input type="checkbox" name="form_contact_min_type_4" id="mi_4" value="문화">
+                <label class="lab_check" for="mi_4"><span class="checkbox"
                     style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">문화</span></label>
                 
                 &nbsp;&nbsp;
                 
-                <input type="checkbox" name="form_contact_min_type_6" id="mi_6" value="동물">
-                <label class="lab_check" for="mi_6"><span class="checkbox"
+                <input type="checkbox" name="form_contact_min_type_5" id="mi_5" value="동물">
+                <label class="lab_check" for="mi_5"><span class="checkbox"
                     style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">동물</span></label>
                 
                 &nbsp;&nbsp;
                 
-                <input type="checkbox" name="form_contact_min_type_7" id="mi_7" value="기타">
-                <label class="lab_check" for="mi_7"><span class="checkbox"
+                <input type="checkbox" name="form_contact_min_type_6" id="mi_6" value="기타">
+                <label class="lab_check" for="mi_6"><span class="checkbox"
                     style="margin-bottom:0.375rem;"></span> <span style="color:#333;font-size:15px;">기타</span></label>
               </div>
               <p class="help-block text-danger"></p>
@@ -269,7 +263,7 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <input class="form-control" type="text" name="form_contact_url" placeholder="AQR 고유 주소" required="">
-                  <p class="help-block text-gray small"><span aria-hidden="true" class="icon-info-circle"></span> 아래 링크에서 간편 입급 요청 페이지를 생성하면 함께 만들어지는 AQR 고유 주소를 입력해주세요.<br>
+                  <p class="help-block text-gray small"><span aria-hidden="true" class="icon-info-circle"></span> 아래 링크에서 간편 입급 요청 페이지를 만들면 생성되는 AQR 고유 주소를 입력해주세요.<br>
                     [ <b><a href="https://aplx.link/square" target="_blank">AQR Square</a></b> ]
                   </p>
                 </div>
@@ -305,7 +299,7 @@
                 <div class="form-group">
                   <input type="checkbox" name="form_contact_agree_1" id="form_contact_agree_1" value="제공">
                   <label class="lab_check" for="form_contact_agree_1"><span class="checkbox"></span></label>
-                  <a style="cursor:pointer;" id="form_contact_privacy_link">개인정보 처리방침</a> 동의 <span
+                  <a style="cursor:pointer;color:#11897d;" id="form_contact_privacy_link">개인정보 처리방침</a> 동의 <span
                     class="required">(필수)</span>
                 </div>
               </div>
