@@ -62,7 +62,7 @@ function setPageContent(data) {
       AAPI_GA_EVENT("give_button_click", curButtonIndex, token);
 
       new AQRWidget().renderAQRWidget(
-      {
+        {
           token : token,
           layer_id : "aqr-widget-area", // target layer id
           profile : true, // Show or Not profile image and account name
@@ -71,7 +71,8 @@ function setPageContent(data) {
           textcolor : "#555555", // hex only
           button_text : "후원하기",
           open : false
-        }
+        },
+        aqrWidgetLoaded
       );
   
       $("#aqrDialog").modal('show');
