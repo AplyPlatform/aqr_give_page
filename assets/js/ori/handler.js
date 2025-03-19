@@ -18,6 +18,10 @@ function initGivePage() {
   }
 }
 
+function aqrWidgetLoaded() {
+  $("#widgetLoader").hide();
+}
+
 function setPageContent(data) {
 
   let kindCounts = {};
@@ -49,7 +53,9 @@ function setPageContent(data) {
     );
 
     kindCounts[item["kind_no"]] = kindCounts[item["kind_no"]] + 1 || 1;
-    $("#curButtonIndex_" + curButtonIndex).click(function() {      
+    $("#curButtonIndex_" + curButtonIndex).click(function() {
+      $("#widgetLoader").show();
+
       let token = $(this).attr('aqr-data-token');
       $("#aqr-widget-area").empty();
   
