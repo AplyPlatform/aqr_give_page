@@ -68,7 +68,7 @@ function setPageContent(data) {
           profile : true, // Show or Not profile image and account name
           libbutton : true, // Show or Not SNS Link Buttons
           bgcolor : "#ffffff", // hex only
-          textcolor : "#555555", // hex only
+          textcolor : "#1c8b7e", // hex only
           button_text : "후원하기",
           open : false
         },
