@@ -7,7 +7,7 @@ function initGivePage() {
 
   $(".joinButton").click(function() {
     AAPI_GA_EVENT("join_button_click", "join_button", "click");
-    $("#registerDialog").modal('show');
+//    $("#registerDialog").modal('show');
   });
 
   for (const [key, value] of Object.entries(curPage)) {
